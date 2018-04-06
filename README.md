@@ -32,4 +32,20 @@ ckanext.pages.organization_menu = False
 
 By default these are all set to True, like on a default install.
 
+## Debugging
 
+Every time you pull new changes into your existing repository, you should restart services to make sure all the files are compiled. You can use the following command for this:
+
+```
+$ supervisorctl restart all
+```
+If you run into issues while pulling new changes into your existing repository, you should run setup.py which will set up the environment correctly. See below:
+
+```
+$ python setup.py egg_info
+```
+Also, if you run into issues with the website being inaccessible, you can restart the http service by using the following command:
+
+```
+$ service httpd restart
+```
